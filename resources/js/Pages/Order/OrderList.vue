@@ -4,10 +4,10 @@
           style="width: 100%; margin-bottom: 10px">
     <template #extra>
       <Link :href="'/orders/' + order.id + '/edit'">edit</Link>
-      |
-      <a @click="handleDelete(order.id)">delete</a>
-      |
-      <a @click="handlePrint(order)">print</a>
+      <template v-if="order.order_details.length">
+        |
+        <a @click="handlePrint(order)">print</a>
+      </template>
     </template>
     <a-table :pagination="{ pageSize: 3 }" :columns="columns" :data-source="order.order_details">
       <template #summary>
@@ -145,17 +145,6 @@ const columns = [
     dataIndex: 'order_amount',
   },
 ];
-
-const handleDelete = (id) => {
-  if (confirm('Sure ?')) {
-    router.delete('/orders/' + id, {
-      onFinish: visit => {
-        window.location.reload();
-      }
-    })
-  }
-}
-
 
 const open = ref<boolean>(false);
 

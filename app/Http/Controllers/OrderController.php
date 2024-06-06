@@ -128,7 +128,7 @@ class OrderController extends Controller
             $order->orderDetails()->delete();
             $order->delete();
             DB::commit();
-            return back();
+            return redirect('/orders');
         } catch (\Exception $e) {
             DB::rollBack();
         }

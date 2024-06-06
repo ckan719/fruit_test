@@ -1,5 +1,6 @@
 <template>
-  <h2>Order Update</h2>
+  <a-typography-title style="display: inline-block; margin-right: 20px">Order Update</a-typography-title>
+  <a-button danger @click="handleDelete(order.id)">Delete</a-button>
   <div style="background-color: #ececec; padding: 20px">
     <a-row :gutter="[16, 16]">
       <a-col :span="24">
@@ -124,4 +125,12 @@ const resetForm = () => {
 const handleValidate = (...args) => {
   console.log(args);
 };
+
+
+const handleDelete = (id) => {
+  if (confirm('Sure ?')) {
+    router.delete('/orders/' + id)
+  }
+}
+
 </script>
