@@ -1,0 +1,22 @@
+{
+    "type": "module",
+    "scripts": {
+        "dev": "npm run development",
+        "development": "vite"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "unplugin-vue-components": "^0.27.0"
+    },
+    "dependencies": {
+        "@inertiajs/vue3": "^1.1.0",
+        "@vitejs/plugin-vue": "^5.0.5",
+        "ant-design-vue": "4.x",
+        "laravel-vite-plugin": "^1.0.4",
+        "vite": "^5.2.12",
+        "vue": "^3.4.27"
+    }
+}
